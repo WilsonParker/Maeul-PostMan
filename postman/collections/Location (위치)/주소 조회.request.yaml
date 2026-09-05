@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{server-url}}/api/location?latitude=37.1&longitude=126.1"
+method: GET
+queryParams:
+  latitude: "37.1"
+  longitude: "126.1"
+order: 1788628226141
