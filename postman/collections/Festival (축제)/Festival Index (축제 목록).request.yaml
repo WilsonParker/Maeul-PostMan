@@ -1,67 +1,50 @@
 $kind: http-request
-url: "{{server-url}}/api/festivals?areaCode=&sigunguCode=&cat1=&cat2=&cat3=&lDongRegnCd=11&lDongSignguCd=470&lclsSystm1=EV"
+url: "{{server-url}}/api/festivals"
 method: GET
-queryParams:
-  - key: _type
-    value: json
-    disabled: true
-    description: "응답메세지 형식 : REST방식의 URL호출 시 json값 추가(디폴트 응답메세지 형식은XML)"
-  - key: arrange
-    value: C
-    disabled: true
-    description: 정렬구분 (A=제목순, C=수정일순, D=생성일순) 대표이미지가반드시있는정렬(O=제목순, Q=수정일순, R=생성일순)
-  - key: eventStartDate
-    value: "20260101"
-    disabled: true
-    description: 행사시작일(형식 :YYYYMMDD)
-  - key: eventEndDate
-    value: "20261201"
-    disabled: true
-    description: 행사종료일(형식 :YYYYMMDD)
-  - key: areaCode
-    value: ""
-    disabled: false
-    description: 미사용항목(삭제예정-법정동 시도코드 대체)
-  - key: sigunguCode
-    value: ""
-    disabled: false
-    description: 미사용항목(삭제예정-법정동 시군구 코드 대체)
-  - key: cat1
-    value: ""
-    disabled: false
-    description: 미사용항목(삭제예정-분류체계 1Deth 코드로 대체)
-  - key: cat2
-    value: ""
-    disabled: false
-    description: 미사용항목(삭제예정-분류체계 2Deth 코드로 대체)
-  - key: cat3
-    value: ""
-    disabled: false
-    description: 미사용항목(삭제예정-분류체계 3Deth 코드로 대체)
-  - key: lDongRegnCd
-    value: "11"
-    disabled: false
-    description: 법정동 시도코드(법정동코드조회 참고)
-  - key: lDongSignguCd
-    value: "470"
-    disabled: false
-    description: 법정동 시군구코드(법정동코드조회 참고, lDongRegnCd 필수입력)
-  - key: lclsSystm1
-    value: EV
-    disabled: false
-    description: 분류체계 1Deth(분류체계코드조회 참고)
-  - key: lclsSystm2
-    value: ""
-    disabled: true
-    description: 분류체계 2Deth(분류체계코드조회 참고, lclsSystm1 필수입력)
-  - key: lclsSystm3
-    value: ""
-    disabled: true
-    description: 분류체계 3Deth(분류체계코드조회 참고, lclsSystm1/lclsSystm2 필수입력)
-  - key: modifiedtime
-    value: ""
-    disabled: true
-    description: 수정일(형식 :YYYYMMDD)
+body:
+  type: json
+  content: |-
+    [
+        {
+            "key": "eventStartDate",
+            "value": "20260101",
+            "description": "행사시작일(형식 :YYYYMMDD)",
+            "enabled": false
+        },
+        {
+            "key": "eventEndDate",
+            "value": "20261201",
+            "description": "행사종료일(형식 :YYYYMMDD)",
+            "enabled": false
+        },
+        {
+            "key": "tourCategoryCode",
+            "value": "EV",
+            "description": "카테고리 코드",
+            "enabled": true
+        },
+        {
+            "key": "location",
+            "value": {
+                "region1depthName" : "서울특별시",
+                "region2depthName" : "강서구"
+            },
+            "description": "위치 정보",
+            "enabled": true
+        },
+        {
+            "key": "page",
+            "value": "2",
+            "description": "",
+            "enabled": true
+        },
+        {
+            "key": "size",
+            "value": "20",
+            "description": "",
+            "enabled": true
+        }
+    ]
 auth:
   type: noauth
 order: 3470908172852646
