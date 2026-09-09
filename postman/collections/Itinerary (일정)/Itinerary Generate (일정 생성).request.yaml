@@ -5,7 +5,7 @@ body:
   type: json
   content: |-
     {
-      "tour_id": 1073801,
+      "tour_id": 1007868,
       "startDate": "20260901",
       "endDate": "20260903"
     }
