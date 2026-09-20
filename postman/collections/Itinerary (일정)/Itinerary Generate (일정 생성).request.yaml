@@ -6,8 +6,8 @@ body:
   content: |-
     {
       "tour_id": 1013082,
-      "startDate": "20260901",
-      "endDate": "20260903"
+      "startDate": "20260921",
+      "endDate": "20260924"
     }
 auth:
   type: bearer
