@@ -9,4 +9,4 @@ values:
   - key: open-api-service-key
     value: ''
   - key: bearer-token
-    secret: true
+    value: ''
